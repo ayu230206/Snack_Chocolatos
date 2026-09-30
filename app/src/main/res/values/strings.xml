@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ANH-Chocolatos</string>
+    <string name="title_chocolatos_mede">Chocolatos Wafer Stick Cokelat Mede</string>
+    <string name="title_komposisi">Komposisi</string>
+    <string name="isi_komposisi">Tepung Terigu, Gula, Minyak Nabati, Cokelat Bubuk, Kacang Mede, Susu Bubuk, Pengemulsi (Lesitin Kedelai), Garam, Perisa Sintetik, Pengembang.</string>
+    <string name="title_gizi">Informasi Gizi (Per Sajian 24g)</string>
+    <string name="isi_gizi">• Energi Total: 120 kcal\n• Lemak Total: 5g\n• Protein: 2g\n• Karbohidrat Total: 16g\n• Gula: 9g\n• Garam (Natrium): 35mg</string>
+</resources>
