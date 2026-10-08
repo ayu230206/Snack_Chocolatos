@@ -5,4 +5,12 @@
     <string name="isi_komposisi">Tepung Terigu, Gula, Minyak Nabati, Cokelat Bubuk, Kacang Mede, Susu Bubuk, Pengemulsi (Lesitin Kedelai), Garam, Perisa Sintetik, Pengembang.</string>
     <string name="title_gizi">Informasi Gizi (Per Sajian 24g)</string>
     <string name="isi_gizi">• Energi Total: 120 kcal\n• Lemak Total: 5g\n• Protein: 2g\n• Karbohidrat Total: 16g\n• Gula: 9g\n• Garam (Natrium): 35mg</string>
+
+    <!-- Key kedua diganti namanya-->
+    <string name="app_name_sikuda">SIKUDA Pantau</string>
+    <string name="tagline">Pantau koperasi dari genggaman</string>
+    <string name="nama_kud">KUD Lubuk Karya</string>
+    <string name="versi">Versi 1.0.0</string>
+    <string name="onboarding_judul">Pantau Kas Koperasi\nKapan Saja, Di Mana Saja</string>
+    <string name="onboarding_desc">Lihat saldo kas, simpanan anggota, dan penjualan TBS KUD Lubuk Karya secara real-time langsung dari HP Anda.</string>
 </resources>

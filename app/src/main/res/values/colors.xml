@@ -4,4 +4,24 @@
     <color name="white">#FFFFFFFF</color>
     <color name="marun_chocolatos">#5C1D18</color>
     <color name="krem_chocolatos">#F5EBE1</color>
+
+    <!-- SIKUDA Pantau · Color Palette -->
+    <color name="sikuda_primary">#1F6B45</color>
+    <color name="sikuda_primary_dark">#134A30</color>
+    <color name="sikuda_accent">#E8892B</color>
+    <color name="sikuda_kas_masuk">#2E9E5B</color>
+    <color name="sikuda_kas_keluar">#D64545</color>
+    <color name="sikuda_info">#2F6FD6</color>
+    <color name="sikuda_teks">#1B2A22</color>
+    <color name="sikuda_latar">#F4F7F5</color>
+    <color name="sikuda_putih">#FFFFFF</color>
+    <color name="sikuda_abu">#6B7A72</color>
+    <color name="sikuda_header_top">#2E8B5E</color>
+    <color name="sikuda_teks_2">#5E7268</color>
+    <color name="sikuda_abu_muda">#98A69F</color>
+    <color name="sikuda_garis">#E3EAE6</color>
+    <color name="sikuda_hijau_pucat">#D5E8DD</color>
+    <color name="sikuda_versi">#BFD8CA</color>
+    <color name="sikuda_dot">#CFDAD4</color>
+    <color name="sikuda_pantau">#F6B26B</color>
 </resources>

@@ -1,8 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.ANHChocolatos" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.ANHChocolatos" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Color Palette SIKUDA Pantau -->
+        <item name="colorPrimary">@color/sikuda_primary</item>
+        <item name="colorPrimaryDark">@color/sikuda_primary_dark</item>
+        <item name="colorOnPrimary">@color/sikuda_putih</item>
+        <item name="colorSecondary">@color/sikuda_accent</item>
+        <item name="android:colorBackground">@color/sikuda_latar</item>
+
+        <!-- Font default seluruh aplikasi -->
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
     <style name="Theme.ANHChocolatos" parent="Base.Theme.ANHChocolatos" />
