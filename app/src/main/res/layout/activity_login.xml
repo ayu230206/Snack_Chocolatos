@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sikuda_latar"
+    tools:context=".sikuda.LoginActivity">
+
+    <!-- Konten (di belakang Toolbar) -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Header hijau + daun dari Figma -->
+            <ImageView
+                android:id="@+id/imgHeader"
+                android:layout_width="0dp"
+                android:layout_height="330dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_login_header"
+                android:contentDescription="Header"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Logo -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLogo"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="96dp"
+                app:cardBackgroundColor="@color/sikuda_putih"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="6dp"
+                app:strokeWidth="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/logo_daun"
+                    android:contentDescription="@string/app_name_sikuda" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/textSapaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:text="Selamat datang kembali,"
+                android:textColor="@color/sikuda_hijau_pucat"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular"
+                app:layout_constraintTop_toBottomOf="@id/cardLogo"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textJudul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="Masuk ke SIKUDA Pantau"
+                android:textColor="@color/sikuda_putih"
+                android:textSize="24sp"
+                android:fontFamily="@font/poppins_bold"
+                app:layout_constraintTop_toBottomOf="@id/textSapaan"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textKhusus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="Khusus Pemilik / Penanggung Jawab KUD"
+                android:textColor="@color/sikuda_hijau_pucat"
+                android:textSize="13sp"
+                android:fontFamily="@font/poppins_regular"
+                app:layout_constraintTop_toBottomOf="@id/textJudul"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Kartu Form Login -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardForm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="26dp"
+                app:cardBackgroundColor="@color/sikuda_putih"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="6dp"
+                app:strokeWidth="0dp"
+                app:layout_constraintTop_toBottomOf="@id/textKhusus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Nama Pengguna -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Pengguna"
+                        android:textColor="@color/sikuda_teks_2"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/poppins_medium" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="6dp"
+                        app:cardBackgroundColor="@color/sikuda_putih"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/sikuda_garis"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="16dp">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:src="@drawable/ic_person"
+                                android:contentDescription="Ikon pengguna" />
+
+                            <EditText
+                                android:id="@+id/inputUsername"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginStart="12dp"
+                                android:background="@null"
+                                android:hint="hasan.pemilik"
+                                android:inputType="text"
+                                android:textColor="@color/sikuda_teks"
+                                android:textColorHint="@color/sikuda_abu_muda"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/poppins_medium" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Kata Sandi -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="Kata Sandi"
+                        android:textColor="@color/sikuda_teks_2"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/poppins_medium" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="6dp"
+                        app:cardBackgroundColor="@color/sikuda_putih"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/sikuda_primary"
+                        app:strokeWidth="1.5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="16dp">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:src="@drawable/ic_lock"
+                                android:contentDescription="Ikon kunci" />
+
+                            <EditText
+                                android:id="@+id/inputPassword"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginStart="12dp"
+                                android:background="@null"
+                                android:hint="Kata sandi"
+                                android:inputType="textPassword"
+                                android:textColor="@color/sikuda_teks"
+                                android:textColorHint="@color/sikuda_abu_muda"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/poppins_medium" />
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:src="@drawable/ic_visibility"
+                                android:contentDescription="Lihat sandi" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Ingat saya & Lupa kata sandi -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/checkIngat"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="Ingat saya"
+                            android:textColor="@color/sikuda_teks"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:buttonTint="@color/sikuda_primary" />
+
+                        <TextView
+                            android:id="@+id/textLupaSandi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:text="Lupa kata sandi?"
+                            android:textColor="@color/sikuda_accent"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/poppins_semibold" />
+                    </LinearLayout>
+
+                    <!-- Tombol Masuk -->
+                    <Button
+                        android:id="@+id/btnLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Masuk"
+                        android:textColor="@color/sikuda_putih"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:backgroundTint="@color/sikuda_primary"
+                        app:cornerRadius="14dp" />
+
+                    <!-- Garis "atau" -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/sikuda_garis" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="16dp"
+                            android:text="atau"
+                            android:textColor="@color/sikuda_abu_muda"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/poppins_regular" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/sikuda_garis" />
+                    </LinearLayout>
+
+                    <!-- Tombol Sidik Jari -->
+                    <Button
+                        android:id="@+id/btnSidikJari"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="22dp"
+                        android:text="Masuk dengan Sidik Jari"
+                        android:textColor="@color/sikuda_primary"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/poppins_semibold"
+                        app:strokeColor="@color/sikuda_primary"
+                        app:strokeWidth="1.5dp"
+                        app:cornerRadius="14dp"
+                        app:icon="@drawable/ic_fingerprint"
+                        app:iconTint="@color/sikuda_primary"
+                        app:iconGravity="textStart" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Footer -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/cardForm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_shield"
+                    android:contentDescription="Ikon aman" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="Koneksi aman HTTPS · SIKUDA v1.0"
+                    android:textColor="@color/sikuda_abu_muda"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/poppins_regular" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Toolbar transparan di atas header -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:titleTextColor="@color/sikuda_putih" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
