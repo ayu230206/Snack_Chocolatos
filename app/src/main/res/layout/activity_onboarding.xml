@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sikuda_latar"
+    tools:context=".sikuda.OnboardingActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sikuda_latar"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/sikuda_latar">
+
+            <!-- Tombol Lewati (sesuai Figma) -->
+            <TextView
+                android:id="@+id/textLewati"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp"
+                android:text="Lewati"
+                android:textColor="@color/sikuda_teks_2"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_semibold" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!-- Ilustrasi dari Figma -->
+            <ImageView
+                android:id="@+id/imgOnboarding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/img_onboarding"
+                android:contentDescription="Ilustrasi SIKUDA Pantau" />
+
+            <!-- Indikator halaman (titik) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="24dp"
+                    android:layout_height="8dp"
+                    app:cardBackgroundColor="@color/sikuda_primary"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="8dp"
+                    app:cardBackgroundColor="@color/sikuda_dot"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="8dp"
+                    app:cardBackgroundColor="@color/sikuda_dot"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textJudul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginHorizontal="24dp"
+                android:gravity="center"
+                android:text="@string/onboarding_judul"
+                android:textColor="@color/sikuda_primary_dark"
+                android:textSize="22sp"
+                android:fontFamily="@font/poppins_bold"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginHorizontal="28dp"
+                android:gravity="center"
+                android:text="@string/onboarding_desc"
+                android:textColor="@color/sikuda_teks_2"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular" />
+
+            <!-- Tombol Kunjungi Website -->
+            <Button
+                android:id="@+id/btnWebsite"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginHorizontal="24dp"
+                android:text="Kunjungi Website"
+                android:textColor="@color/sikuda_primary"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_semibold"
+                app:strokeColor="@color/sikuda_primary"
+                app:strokeWidth="1.5dp"
+                app:cornerRadius="14dp"
+                app:icon="@drawable/ic_language"
+                app:iconTint="@color/sikuda_primary"
+                app:iconGravity="textStart" />
+
+            <!-- Tombol Lanjut -->
+            <Button
+                android:id="@+id/btnLanjut"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="24dp"
+                android:layout_marginHorizontal="24dp"
+                android:text="Lanjut"
+                android:textColor="@color/sikuda_putih"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_semibold"
+                android:backgroundTint="@color/sikuda_primary"
+                app:cornerRadius="14dp"
+                app:icon="@drawable/ic_chevron_right"
+                app:iconTint="@color/sikuda_putih"
+                app:iconGravity="textStart" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
