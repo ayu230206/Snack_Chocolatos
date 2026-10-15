@@ -29,7 +29,7 @@ class WebViewActivity : AppCompatActivity() {
         // Mengaktifkan toolbar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Info Koperasi"
+            title = intent.getStringExtra("judul") ?: "Info Koperasi"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
@@ -38,8 +38,8 @@ class WebViewActivity : AppCompatActivity() {
         // Konfigurasi WebView
         binding.webView.webViewClient = WebViewClient()
         binding.webView.settings.javaScriptEnabled = true
-        binding.webView.loadUrl("https://id.wikipedia.org/wiki/Koperasi_Unit_Desa")
-
+        val url = intent.getStringExtra("url") ?: "https://id.wikipedia.org/wiki/Koperasi_Unit_Desa"
+        binding.webView.loadUrl(url)
         // Agar Toolbar hide/show saat scroll web
         binding.webView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
             if (scrollY > oldScrollY) {

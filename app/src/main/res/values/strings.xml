@@ -13,4 +13,21 @@
     <string name="versi">Versi 1.0.0</string>
     <string name="onboarding_judul">Pantau Kas Koperasi\nKapan Saja, Di Mana Saja</string>
     <string name="onboarding_desc">Lihat saldo kas, simpanan anggota, dan penjualan TBS KUD Lubuk Karya secara real-time langsung dari HP Anda.</string>
+
+    <!-- Profil Developer -->
+    <string name="dev_nama">Ayu Nur Habibah</string>
+    <string name="dev_inisial">AN</string>
+    <string name="dev_peran">Mahasiswa · Developer SIKUDA Pantau</string>
+    <string name="dev_nim">2455301216</string>
+    <string name="dev_prodi">Teknik Informatika</string>
+    <string name="dev_kampus">Politeknik Caltex Riau</string>
+    <string name="dev_email">ayu24ti@mahasiswa.pcr.ac.id</string>
+    <string name="dev_instagram">\@aaynh_</string>
+    <string name="dev_instagram_url">https://www.instagram.com/[username instagram]</string>
+    <string name="dev_github">github.com/ayu230206</string>
+    <string name="dev_github_url">https://github.com/ayu230206/Snack_Chocolatos</string>
+    <string name="dev_linkedin">Ayu Nur Habibah</string>
+    <string name="dev_linkedin_url">https://www.linkedin.com/in/ayu-nur-habibah-b686b738b/</string>
+    <string name="dev_hobi">Menonton anime, Menonton tiktok</string>
+    <string name="dev_kekuatan">orang tua dan impian menjadi kaya punya ladang sawit 100 hektar AMINNN....</string>
 </resources>

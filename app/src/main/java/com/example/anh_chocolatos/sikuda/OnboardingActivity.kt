@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.anh_chocolatos.AuthActivity
 import com.example.anh_chocolatos.R
 import com.example.anh_chocolatos.databinding.ActivityOnboardingBinding
 
@@ -44,15 +45,15 @@ class OnboardingActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Lanjut → Login
+        // Lanjut → AuthActivity
         binding.btnLanjut.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, AuthActivity::class.java)
             startActivity(intent)
         }
 
-        // Lewati → Login
+        // Lewati → AuthActivity
         binding.textLewati.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, AuthActivity::class.java)
             startActivity(intent)
         }
     }

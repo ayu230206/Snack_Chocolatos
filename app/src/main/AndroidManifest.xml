@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ANHChocolatos">
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreenActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -32,7 +32,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".sikuda.LoginActivity"
+            android:name=".AuthActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -41,6 +41,18 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".sikuda.OnboardingActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".sikuda.ProfilActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".sikuda.DeveloperActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
