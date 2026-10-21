@@ -1,13 +1,17 @@
 package com.example.anh_chocolatos
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
+import com.example.anh_chocolatos.beranda.BerandaFragment
 import com.example.anh_chocolatos.databinding.ActivityBaseBinding
+import com.example.anh_chocolatos.laporan.LaporanFragment
+import com.example.anh_chocolatos.notifikasi.NotifikasiFragment
+import com.example.anh_chocolatos.profil.ProfilFragment
 
 class BaseActivity : AppCompatActivity() {
 
@@ -28,26 +32,36 @@ class BaseActivity : AppCompatActivity() {
         // Latar terang → ikon status bar gelap
         WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightStatusBars = true
 
+        /** BerandaFragment sebagai fragment default */
+        replaceFragment(BerandaFragment())
+
         binding.bottomNavView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.beranda -> {
-                    Toast.makeText(this, "Beranda Clicked", Toast.LENGTH_SHORT).show()
+                    replaceFragment(BerandaFragment())
                     true
                 }
                 R.id.laporan -> {
-                    Toast.makeText(this, "Laporan Clicked", Toast.LENGTH_SHORT).show()
+                    replaceFragment(LaporanFragment())
                     true
                 }
                 R.id.notifikasi -> {
-                    Toast.makeText(this, "Notifikasi Clicked", Toast.LENGTH_SHORT).show()
+                    replaceFragment(NotifikasiFragment())
                     true
                 }
                 R.id.profil -> {
-                    Toast.makeText(this, "Profil Clicked", Toast.LENGTH_SHORT).show()
+                    replaceFragment(ProfilFragment())
                     true
                 }
                 else -> false
             }
         }
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(binding.fragmentContainer.id, fragment)
+            //.addToBackStack(null) -> dinonaktifkan agar saat back langsung keluar aplikasi
+            .commit()
     }
 }
