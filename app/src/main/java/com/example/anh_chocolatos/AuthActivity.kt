@@ -62,7 +62,7 @@ class AuthActivity : AppCompatActivity() {
                 editor.apply()
 
                 Toast.makeText(this, "Login berhasil, selamat datang $username", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, BaseActivity::class.java)
                 startActivity(intent)
                 finishAffinity() // tutup Auth & Onboarding, back dari Beranda tidak kembali ke Login
 
