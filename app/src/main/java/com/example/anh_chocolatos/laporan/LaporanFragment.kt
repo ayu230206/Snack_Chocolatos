@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.anh_chocolatos.databinding.FragmentLaporanBinding
+import androidx.appcompat.app.AppCompatActivity
 
 class LaporanFragment : Fragment() {
 
@@ -21,5 +22,13 @@ class LaporanFragment : Fragment() {
         // Hubungkan layout fragment_laporan.xml ke Fragment ini (versi binding)
         _binding = FragmentLaporanBinding.inflate(inflater, container, false)
         return binding.root
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
+            setDisplayShowTitleEnabled(false)
+        }
     }
 }
