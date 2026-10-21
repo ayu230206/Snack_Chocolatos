@@ -2,6 +2,7 @@ package com.example.anh_chocolatos.sikuda
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,7 @@ class DeveloperActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        Log.e("onCreate", "DeveloperActivity dibuat pertama kali")
 
         // Toolbar + tombol back
         setSupportActionBar(binding.toolbar)
@@ -39,22 +41,23 @@ class DeveloperActivity : AppCompatActivity() {
         binding.textGithub.text = "💻  GitHub · " + getString(R.string.dev_github)
         binding.textLinkedin.text = "💼  LinkedIn · " + getString(R.string.dev_linkedin)
 
-        // Ketuk sosmed → buka di WebView (kirim url lewat putExtra)
+        // Ketuk sosmed → buka di WebView (kirim data lewat putExtra)
         binding.textInstagram.setOnClickListener {
-            bukaWeb("Instagram", getString(R.string.dev_instagram_url))
+            bukaWeb("Instagram", getString(R.string.dev_instagram_url), 1)
         }
         binding.textGithub.setOnClickListener {
-            bukaWeb("GitHub", getString(R.string.dev_github_url))
+            bukaWeb("GitHub", getString(R.string.dev_github_url), 2)
         }
         binding.textLinkedin.setOnClickListener {
-            bukaWeb("LinkedIn", getString(R.string.dev_linkedin_url))
+            bukaWeb("LinkedIn", getString(R.string.dev_linkedin_url), 3)
         }
     }
 
-    private fun bukaWeb(judul: String, url: String) {
+    private fun bukaWeb(judul: String, url: String, nomor: Int) {
         val intent = Intent(this, WebViewActivity::class.java)
         intent.putExtra("judul", judul)
         intent.putExtra("url", url)
+        intent.putExtra("nomor", nomor)
         startActivity(intent)
     }
 
@@ -67,5 +70,15 @@ class DeveloperActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.e("onStart", "onStart: DeveloperActivity terlihat di layar")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("onDestroy", "DeveloperActivity dihapus dari stack")
     }
 }
