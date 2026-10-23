@@ -41,19 +41,28 @@ class AuthActivity : AppCompatActivity() {
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
-        // Tombol Masuk
+// ===== Tombol Masuk =====
         binding.btnLogin.setOnClickListener {
             val username = binding.inputUsername.text.toString().trim()
             val password = binding.inputPassword.text.toString().trim()
 
+            // Data hasil registrasi (Soal 2)
+            val regPref = getSharedPreferences("user_register", MODE_PRIVATE)
+            val savedUsername = regPref.getString("username", null)
+            val savedPassword = regPref.getString("password", null)
+
+            // Kondisi 1: username == password
+            val kondisi1 = username == password
+            // Kondisi 2: cocok dengan data SharedPreferences
+            val kondisi2 = savedUsername != null &&
+                    username == savedUsername && password == savedPassword
+
             if (username.isEmpty() || password.isEmpty()) {
-                // 1. Kolom kosong
                 Toast.makeText(this, "Nama pengguna dan kata sandi wajib diisi", Toast.LENGTH_SHORT).show()
 
-            } else if (username == password) {
-                // 2. Autentikasi berhasil → simpan ke SharedPreferences
+            } else if (kondisi1 || kondisi2) {
+                // Login berhasil → simpan status login → Home
                 val waktuLogin = SimpleDateFormat("dd MMM yyyy, HH:mm", Locale("id", "ID")).format(Date())
-
                 val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
@@ -62,35 +71,34 @@ class AuthActivity : AppCompatActivity() {
                 editor.apply()
 
                 Toast.makeText(this, "Login berhasil, selamat datang $username", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, BaseActivity::class.java)
-                startActivity(intent)
-                finishAffinity() // tutup Auth & Onboarding, back dari Beranda tidak kembali ke Login
+                startActivity(Intent(this, BaseActivity::class.java))
+                finishAffinity()
 
             } else {
-                // 3. Autentikasi gagal → AlertDialog
+                // Login gagal → MaterialAlertDialog
                 MaterialAlertDialogBuilder(this)
                     .setTitle("Login Gagal")
-                    .setMessage("Silahkan coba lagi")
-                    .setPositiveButton("OK") { dialog, _ ->
-                        dialog.dismiss()
-                    }
+                    .setMessage("Username atau password salah, silahkan coba lagi")
+                    .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
                     .show()
             }
         }
 
-        // Lupa kata sandi → Snackbar
+        // ===== Tombol Register With Gmail (Soal 1) =====
+        binding.btnRegisterGmail.setOnClickListener {
+            startActivity(Intent(this, EmailActivity::class.java))
+        }
+
         binding.textLupaSandi.setOnClickListener {
             Snackbar.make(binding.root, "Hubungi Admin SIKUDA untuk reset kata sandi", Snackbar.LENGTH_SHORT)
                 .setAction("Tutup") { }
                 .show()
         }
 
-        // Sidik jari → Snackbar
         binding.btnSidikJari.setOnClickListener {
             Snackbar.make(binding.root, "Login sidik jari belum tersedia", Snackbar.LENGTH_SHORT).show()
         }
     }
-
     // Agar tombol back di Toolbar berfungsi
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {

@@ -254,6 +254,14 @@
                         android:fontFamily="@font/poppins_semibold"
                         android:backgroundTint="@color/sikuda_primary"
                         app:cornerRadius="14dp" />
+                    <!-- Tombol Registrasi -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRegisterGmail"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Register With Gmail" />
 
                     <!-- Garis "atau" -->
                     <LinearLayout
