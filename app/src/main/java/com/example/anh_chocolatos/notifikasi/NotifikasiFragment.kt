@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.anh_chocolatos.databinding.FragmentNotifikasiBinding
+import androidx.appcompat.app.AppCompatActivity
 
 class NotifikasiFragment : Fragment() {
 
@@ -21,5 +22,13 @@ class NotifikasiFragment : Fragment() {
         // Hubungkan layout fragment_notifikasi.xml ke Fragment ini (versi binding)
         _binding = FragmentNotifikasiBinding.inflate(inflater, container, false)
         return binding.root
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
+            setDisplayShowTitleEnabled(false)
+        }
     }
 }
