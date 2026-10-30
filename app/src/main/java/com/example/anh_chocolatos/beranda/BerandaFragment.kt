@@ -17,13 +17,14 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import android.content.Intent
+import com.example.anh_chocolatos.anggota.DataAnggotaActivity
 
 class BerandaFragment : Fragment() {
 
     private var _binding: FragmentBerandaBinding? = null
     private val binding get() = _binding!!
 
-    // ===== Sesuai tutorial GeeksforGeeks =====
     lateinit var barChart: BarChart
     lateinit var barDataSet1: BarDataSet
     lateinit var barDataSet2: BarDataSet
@@ -52,11 +53,13 @@ class BerandaFragment : Fragment() {
         val username = sharedPref.getString("username", "Pengguna")
         binding.textNama.text = username
 
-        // ===== Sesuai tutorial: ambil chart, lalu setup & load data =====
         // Tutorial: barChart = findViewById(R.id.idBarChart)
         barChart = binding.chartArusKas
         setupBarChart()
         loadBarChartData()
+        binding.cardAnggotaAktif.setOnClickListener {
+            startActivity(Intent(requireContext(), DataAnggotaActivity::class.java))
+        }
     }
 
     private fun setupBarChart() {

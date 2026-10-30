@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tutorial: course_rv_item.xml (CardView + ImageView + TextView) -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="5dp"
+    app:cardBackgroundColor="@color/sikuda_putih"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <!-- Tutorial: ImageView idIVCourse → di sini lingkaran inisial -->
+        <TextView
+            android:id="@+id/idTVInisial"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_avatar_anggota"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:text="HS"
+            android:textColor="@color/sikuda_primary"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Tutorial: TextView idTVCourse -->
+            <TextView
+                android:id="@+id/idTVNama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Nama Anggota"
+                android:textColor="@color/sikuda_teks"
+                android:textSize="14sp" />
+
+            <!-- TAMBAHAN -->
+            <TextView
+                android:id="@+id/idTVNik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="NIK 1406..."
+                android:textColor="@color/sikuda_abu"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- TAMBAHAN: badge status -->
+        <TextView
+            android:id="@+id/idTVStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_chip_hijau"
+            android:fontFamily="@font/poppins_semibold"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="3dp"
+            android:text="Aktif"
+            android:textColor="@color/sikuda_kas_masuk"
+            android:textSize="11sp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
