@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Warna latar lembut untuk kotak ikon di halaman Beranda -->
+<resources>
+    <color name="sikuda_tint_merah">#FBEAEA</color>
+    <color name="sikuda_tint_oranye">#FDF0E3</color>
+    <color name="sikuda_tint_biru">#E6EEFB</color>
+</resources>
