@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout 1 item notifikasi: judul grup (Hari ini/Kemarin), ikon, judul, waktu, pesan, titik belum dibaca -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp">
+
+    <TextView
+        android:id="@+id/textGrup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Hari ini"
+        android:textColor="@color/sikuda_teks_2"
+        android:textSize="13sp" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardNotifikasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="@color/sikuda_putih"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/sikuda_garis_notif"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="14dp">
+
+            <ImageView
+                android:id="@+id/imgIkon"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/bg_ikon_notifikasi"
+                android:contentDescription="Ikon notifikasi"
+                android:padding="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textJudul"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins_semibold"
+                android:maxLines="1"
+                android:text="Kas keluar besar tercatat"
+                android:textColor="@color/sikuda_teks"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toStartOf="@id/textWaktu"
+                app:layout_constraintStart_toEndOf="@id/imgIkon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textWaktu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="10:24"
+                android:textColor="@color/sikuda_abu_muda"
+                android:textSize="10sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/textJudul"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/textPesan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="14dp"
+                android:fontFamily="@font/poppins_regular"
+                android:lineSpacingExtra="2dp"
+                android:text="Penyaluran dana Rp12.500.000 untuk 25 anggota oleh Admin Keuangan."
+                android:textColor="@color/sikuda_teks_2"
+                android:textSize="11.5sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/textJudul"
+                app:layout_constraintTop_toBottomOf="@id/textJudul" />
+
+            <!-- Titik merah: tampil jika notifikasi belum dibaca -->
+            <View
+                android:id="@+id/viewBelumDibaca"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_titik_notif"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textPesan" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

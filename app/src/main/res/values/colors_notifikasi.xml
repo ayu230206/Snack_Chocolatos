@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Garis tepi kartu notifikasi yang belum dibaca -->
+    <color name="sikuda_garis_notif">#CFE5D8</color>
+    <!-- Latar ikon notifikasi abu (anggota keluar) -->
+    <color name="sikuda_tint_abu">#EDF1EF</color>
+</resources>
