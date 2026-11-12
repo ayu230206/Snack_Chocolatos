@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Warna batang grafik Laba Bersih per Bulan (bulan selain yang disorot) -->
+    <color name="sikuda_hijau_grafik">#9FD0B4</color>
+</resources>

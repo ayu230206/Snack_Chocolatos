@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Garis pemisah antar item ListView, menjorok ke kanan sejajar teks (sesuai Figma) -->
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetLeft="62dp"
+    android:insetRight="14dp">
+    <shape android:shape="rectangle">
+        <solid android:color="@color/sikuda_garis" />
+        <size android:height="1dp" />
+    </shape>
+</inset>
