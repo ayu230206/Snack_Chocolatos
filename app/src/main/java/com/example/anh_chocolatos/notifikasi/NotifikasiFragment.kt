@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.anh_chocolatos.R
 import com.example.anh_chocolatos.databinding.FragmentNotifikasiBinding
+import com.google.android.material.chip.Chip
 
 class NotifikasiFragment : Fragment() {
 
@@ -17,6 +18,9 @@ class NotifikasiFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var adapter: NotifikasiAdapter
+
+    // Kategori yang sedang dipilih di ChipGroup ("Semua", "Transaksi", "Harga TBS", "Anggota")
+    private var kategoriAktif = "Semua"
 
     // List data notifikasi (dummy sesuai desain Figma)
     private val notifikasiList = listOf(
@@ -74,9 +78,19 @@ class NotifikasiFragment : Fragment() {
             setDisplayShowTitleEnabled(false)
         }
 
-        // Terapkan NotifikasiAdapter ke ListView
-        adapter = NotifikasiAdapter(requireContext(), notifikasiList)
-        binding.listNotifikasiItems.adapter = adapter
+        // Terapkan NotifikasiAdapter ke ListView (awal: kategori Semua)
+        tampilkanNotifikasi()
+
+        // ChipGroup: deteksi Chip mana yang dipilih (sesuai materi)
+        binding.chipGroupFilter.setOnCheckedStateChangeListener { group, checkedIds ->
+            val selectedChipId = checkedIds.firstOrNull() // Ambil ID chip yang dipilih
+            if (selectedChipId != null) {
+                val chip = group.findViewById<Chip>(selectedChipId)
+                // Logika filter: teks chip = kategori notifikasi
+                kategoriAktif = chip.text.toString()
+                tampilkanNotifikasi()
+            }
+        }
 
         // "Tandai dibaca" -> semua notifikasi jadi sudah dibaca
         binding.textTandaiDibaca.setOnClickListener {
@@ -84,6 +98,18 @@ class NotifikasiFragment : Fragment() {
             adapter.notifyDataSetChanged()
             Toast.makeText(requireContext(), "Semua notifikasi ditandai dibaca", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    // Tampilkan notifikasi sesuai kategori Chip yang dipilih
+    private fun tampilkanNotifikasi() {
+        val daftarTampil = if (kategoriAktif == "Semua") {
+            notifikasiList
+        } else {
+            notifikasiList.filter { it.kategori == kategoriAktif }
+        }
+
+        adapter = NotifikasiAdapter(requireContext(), daftarTampil)
+        binding.listNotifikasiItems.adapter = adapter
     }
 
     override fun onDestroyView() {

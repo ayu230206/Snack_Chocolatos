@@ -50,6 +50,112 @@
             </FrameLayout>
         </androidx.appcompat.widget.Toolbar>
 
+        <!-- Chip & ChipGroup: filter notifikasi per kategori -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:clipToPadding="false"
+            android:paddingHorizontal="16dp"
+            android:scrollbars="none">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipSpacingHorizontal="7dp"
+                app:selectionRequired="true"
+                app:singleLine="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipSemua"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Semua"
+                    android:textColor="@color/chip_teks_notifikasi"
+                    android:textSize="12sp"
+                    app:checkedIconVisible="false"
+                    app:chipBackgroundColor="@color/chip_bg_notifikasi"
+                    app:chipCornerRadius="17dp"
+                    app:chipEndPadding="0dp"
+                    app:chipMinHeight="34dp"
+                    app:chipStartPadding="0dp"
+                    app:chipStrokeColor="@color/chip_stroke_notifikasi"
+                    app:chipStrokeWidth="1dp"
+                    app:ensureMinTouchTargetSize="false"
+                    app:textEndPadding="11dp"
+                    app:textStartPadding="11dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipTransaksi"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Transaksi"
+                    android:textColor="@color/chip_teks_notifikasi"
+                    android:textSize="12sp"
+                    app:checkedIconVisible="false"
+                    app:chipBackgroundColor="@color/chip_bg_notifikasi"
+                    app:chipCornerRadius="17dp"
+                    app:chipEndPadding="0dp"
+                    app:chipMinHeight="34dp"
+                    app:chipStartPadding="0dp"
+                    app:chipStrokeColor="@color/chip_stroke_notifikasi"
+                    app:chipStrokeWidth="1dp"
+                    app:ensureMinTouchTargetSize="false"
+                    app:textEndPadding="11dp"
+                    app:textStartPadding="11dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipHargaTbs"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Harga TBS"
+                    android:textColor="@color/chip_teks_notifikasi"
+                    android:textSize="12sp"
+                    app:checkedIconVisible="false"
+                    app:chipBackgroundColor="@color/chip_bg_notifikasi"
+                    app:chipCornerRadius="17dp"
+                    app:chipEndPadding="0dp"
+                    app:chipMinHeight="34dp"
+                    app:chipStartPadding="0dp"
+                    app:chipStrokeColor="@color/chip_stroke_notifikasi"
+                    app:chipStrokeWidth="1dp"
+                    app:ensureMinTouchTargetSize="false"
+                    app:textEndPadding="11dp"
+                    app:textStartPadding="11dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAnggota"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Anggota"
+                    android:textColor="@color/chip_teks_notifikasi"
+                    android:textSize="12sp"
+                    app:checkedIconVisible="false"
+                    app:chipBackgroundColor="@color/chip_bg_notifikasi"
+                    app:chipCornerRadius="17dp"
+                    app:chipEndPadding="0dp"
+                    app:chipMinHeight="34dp"
+                    app:chipStartPadding="0dp"
+                    app:chipStrokeColor="@color/chip_stroke_notifikasi"
+                    app:chipStrokeWidth="1dp"
+                    app:ensureMinTouchTargetSize="false"
+                    app:textEndPadding="11dp"
+                    app:textStartPadding="11dp" />
+
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <ListView

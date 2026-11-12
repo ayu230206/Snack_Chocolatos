@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Latar Chip filter notifikasi: hijau saat dipilih, putih saat tidak -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/sikuda_primary" android:state_checked="true" />
+    <item android:color="@color/sikuda_putih" />
+</selector>
