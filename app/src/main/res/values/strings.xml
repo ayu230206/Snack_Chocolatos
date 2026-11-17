@@ -13,6 +13,10 @@
     <string name="versi">Versi 1.0.0</string>
     <string name="onboarding_judul">Pantau Kas Koperasi\nKapan Saja, Di Mana Saja</string>
     <string name="onboarding_desc">Lihat saldo kas, simpanan anggota, dan penjualan TBS KUD Lubuk Karya secara real-time langsung dari HP Anda.</string>
+    <string name="onboarding_judul_2">Kelola Data Anggota\n&amp; Simpanan dengan Mudah</string>
+    <string name="onboarding_desc_2">Cari anggota lewat nama atau NIK, lalu lihat simpanan, penjualan TBS, dan pembelian setiap anggota dalam satu halaman.</string>
+    <string name="onboarding_judul_3">Laporan &amp; Notifikasi\nSelalu Terkini</string>
+    <string name="onboarding_desc_3">Pantau laporan per bulan, per tahun, atau rentang tanggal, dan dapatkan notifikasi transaksi, harga TBS, serta anggota.</string>
 
     <!-- Profil Developer -->
     <string name="dev_nama">Ayu Nur Habibah</string>

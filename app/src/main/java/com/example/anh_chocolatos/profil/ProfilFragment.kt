@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import com.example.anh_chocolatos.AuthActivity
 import com.example.anh_chocolatos.databinding.FragmentProfilBinding
 import com.example.anh_chocolatos.sikuda.DeveloperActivity
+import com.example.anh_chocolatos.sikuda.OnboardingActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
@@ -67,8 +68,11 @@ class ProfilFragment : Fragment() {
         binding.rowUbahSandi.setOnClickListener {
             Snackbar.make(binding.root, "Fitur ubah kata sandi segera hadir", Snackbar.LENGTH_SHORT).show()
         }
+        // Pertemuan 11: Bantuan & Panduan membuka halaman onboarding (panduan aplikasi)
         binding.rowBantuan.setOnClickListener {
-            Snackbar.make(binding.root, "Bantuan & panduan segera hadir", Snackbar.LENGTH_SHORT).show()
+            val intent = Intent(requireContext(), OnboardingActivity::class.java)
+            intent.putExtra(OnboardingActivity.EXTRA_DARI_PROFIL, true)
+            startActivity(intent)
         }
         binding.rowDeveloper.setOnClickListener {
             val intent = Intent(requireContext(), DeveloperActivity::class.java)

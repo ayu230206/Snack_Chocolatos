@@ -166,50 +166,39 @@
                         android:textSize="13sp"
                         android:fontFamily="@font/poppins_medium" />
 
-                    <com.google.android.material.card.MaterialCardView
+                    <!-- Pertemuan 10 (Widget Lainnya): TextInputLayout + endIconMode password_toggle -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutPassword"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="54dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
-                        app:cardBackgroundColor="@color/sikuda_putih"
-                        app:cardCornerRadius="14dp"
-                        app:cardElevation="0dp"
-                        app:strokeColor="@color/sikuda_primary"
-                        app:strokeWidth="1.5dp">
+                        app:boxBackgroundColor="@color/sikuda_putih"
+                        app:boxCornerRadiusBottomEnd="14dp"
+                        app:boxCornerRadiusBottomStart="14dp"
+                        app:boxCornerRadiusTopEnd="14dp"
+                        app:boxCornerRadiusTopStart="14dp"
+                        app:boxStrokeColor="@color/stroke_input_sandi"
+                        app:boxStrokeWidth="1dp"
+                        app:boxStrokeWidthFocused="1.5dp"
+                        app:endIconMode="password_toggle"
+                        app:endIconTint="@color/sikuda_abu"
+                        app:hintEnabled="false"
+                        app:startIconDrawable="@drawable/ic_lock"
+                        app:startIconTint="@color/sikuda_primary">
 
-                        <LinearLayout
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputPassword"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal"
-                            android:paddingHorizontal="16dp">
-
-                            <ImageView
-                                android:layout_width="22dp"
-                                android:layout_height="22dp"
-                                android:src="@drawable/ic_lock"
-                                android:contentDescription="Ikon kunci" />
-
-                            <EditText
-                                android:id="@+id/inputPassword"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:layout_marginStart="12dp"
-                                android:background="@null"
-                                android:hint="Kata sandi"
-                                android:inputType="textPassword"
-                                android:textColor="@color/sikuda_teks"
-                                android:textColorHint="@color/sikuda_abu_muda"
-                                android:textSize="15sp"
-                                android:fontFamily="@font/poppins_medium" />
-
-                            <ImageView
-                                android:layout_width="22dp"
-                                android:layout_height="22dp"
-                                android:src="@drawable/ic_visibility"
-                                android:contentDescription="Lihat sandi" />
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
+                            android:layout_height="54dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:hint="Kata sandi"
+                            android:inputType="textPassword"
+                            android:paddingVertical="0dp"
+                            android:textColor="@color/sikuda_teks"
+                            android:textColorHint="@color/sikuda_abu_muda"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                     <!-- Ingat saya & Lupa kata sandi -->
                     <LinearLayout
