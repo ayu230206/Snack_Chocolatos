@@ -284,23 +284,24 @@
                     android:textSize="12sp" />
             </LinearLayout>
 
-            <!-- Baris 1 -->
-            <LinearLayout
+            <!-- Pertemuan 11: Grid 2 kolom untuk 4 kartu ringkasan (GridLayout) -->
+            <androidx.gridlayout.widget.GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:orientation="horizontal">
+                android:layout_marginHorizontal="-6dp"
+                android:layout_marginTop="6dp"
+                app:columnCount="2"
+                app:useDefaultMargins="false">
 
                 <!-- Kartu Total Simpanan -->
-                <com.google.android.material.card.MaterialCardView
+                <FrameLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="6dp"
-                    app:cardBackgroundColor="@color/sikuda_putih"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="1dp"
-                    app:strokeWidth="0dp">
+                    android:layout_margin="6dp"
+                    android:background="@drawable/bg_kartu_grid"
+                    android:elevation="2dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -354,19 +355,17 @@
                             android:textColor="@color/sikuda_kas_masuk"
                             android:textSize="11sp" />
                     </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
+                </FrameLayout>
 
                 <!-- Kartu Penjualan TBS -->
-                <com.google.android.material.card.MaterialCardView
+                <FrameLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="6dp"
-                    app:cardBackgroundColor="@color/sikuda_putih"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="1dp"
-                    app:strokeWidth="0dp">
+                    android:layout_margin="6dp"
+                    android:background="@drawable/bg_kartu_grid"
+                    android:elevation="2dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -420,28 +419,19 @@
                             android:textColor="@color/sikuda_abu"
                             android:textSize="11sp" />
                     </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-            </LinearLayout>
-
-            <!-- Baris 2 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:orientation="horizontal">
+                </FrameLayout>
 
                 <!-- Kartu Anggota Aktif -->
-                <com.google.android.material.card.MaterialCardView
+                <FrameLayout
                     android:id="@+id/cardAnggotaAktif"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="6dp"
-                    app:cardBackgroundColor="@color/sikuda_putih"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="1dp"
-                    app:strokeWidth="0dp">
+                    android:layout_margin="6dp"
+                    android:background="@drawable/bg_kartu_grid"
+                    android:elevation="2dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -495,19 +485,17 @@
                             android:textColor="@color/sikuda_abu"
                             android:textSize="11sp" />
                     </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
+                </FrameLayout>
 
                 <!-- Kartu Harga TBS -->
-                <com.google.android.material.card.MaterialCardView
+                <FrameLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="6dp"
-                    app:cardBackgroundColor="@color/sikuda_putih"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="1dp"
-                    app:strokeWidth="0dp">
+                    android:layout_margin="6dp"
+                    android:background="@drawable/bg_kartu_grid"
+                    android:elevation="2dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -561,9 +549,9 @@
                             android:textColor="@color/sikuda_kas_keluar"
                             android:textSize="11sp" />
                     </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                </FrameLayout>
 
-            </LinearLayout>
+            </androidx.gridlayout.widget.GridLayout>
 
             <!-- ===== Grafik Arus Kas 6 Bulan ===== -->
             <com.google.android.material.card.MaterialCardView

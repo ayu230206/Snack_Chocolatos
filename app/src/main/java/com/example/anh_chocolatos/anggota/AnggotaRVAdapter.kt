@@ -9,8 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.anh_chocolatos.R
 
 // Tutorial: class CourseRVAdapter(private var courseList: ArrayList<CourseRVModal>)
-class AnggotaRVAdapter(private var anggotaList: ArrayList<AnggotaRVModal>) :
-    RecyclerView.Adapter<AnggotaRVAdapter.AnggotaViewHolder>() {
+// Pertemuan 11: tambah lambda onItemClick (seperti ProductAdapter di materi)
+class AnggotaRVAdapter(
+    private var anggotaList: ArrayList<AnggotaRVModal>,
+    private val onItemClick: (AnggotaRVModal) -> Unit
+) : RecyclerView.Adapter<AnggotaRVAdapter.AnggotaViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnggotaViewHolder {
         val itemView = LayoutInflater.from(parent.context)
@@ -45,6 +48,11 @@ class AnggotaRVAdapter(private var anggotaList: ArrayList<AnggotaRVModal>) :
                 holder.statusTV.setBackgroundResource(R.drawable.bg_kotak_keluar)
                 holder.statusTV.setTextColor(ContextCompat.getColor(context, R.color.sikuda_kas_keluar))
             }
+        }
+
+        // Pertemuan 11: klik item -> kirim data anggota ke Activity
+        holder.itemView.setOnClickListener {
+            onItemClick(anggota)
         }
     }
 

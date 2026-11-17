@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout 1 item RecyclerView riwayat (seperti item_product.xml di materi) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <!-- Garis pemisah (disembunyikan di item pertama) -->
+    <View
+        android:id="@+id/viewGaris"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="14dp"
+        android:background="@color/sikuda_garis" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="9dp">
+
+        <ImageView
+            android:id="@+id/imgIkon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_ikon_notifikasi"
+            android:contentDescription="Ikon riwayat"
+            android:padding="10dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvJudul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="Simpanan Wajib"
+                android:textColor="@color/sikuda_teks"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvKeterangan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="22 Sep 2026"
+                android:textColor="@color/sikuda_abu_muda"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvNominal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="+Rp50.000"
+            android:textColor="@color/sikuda_kas_masuk"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+</LinearLayout>

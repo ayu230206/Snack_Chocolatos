@@ -1,5 +1,6 @@
 package com.example.anh_chocolatos.anggota
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -11,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.anh_chocolatos.R
+import com.example.anh_chocolatos.anggota.detail.DetailAnggotaActivity
 import com.example.anh_chocolatos.databinding.ActivityDataAnggotaBinding
 
 class DataAnggotaActivity : AppCompatActivity() {
@@ -44,7 +46,14 @@ class DataAnggotaActivity : AppCompatActivity() {
         anggotaRV = binding.idRVAnggota
 
         anggotaList = ArrayList()
-        anggotaRVAdapter = AnggotaRVAdapter(anggotaList)
+        anggotaRVAdapter = AnggotaRVAdapter(anggotaList) { anggota ->
+            // Pertemuan 11: buka Detail Anggota sesuai anggota yang diklik
+            val intent = Intent(this, DetailAnggotaActivity::class.java)
+            intent.putExtra(DetailAnggotaActivity.EXTRA_NAMA, anggota.namaAnggota)
+            intent.putExtra(DetailAnggotaActivity.EXTRA_NIK, anggota.nikAnggota)
+            intent.putExtra(DetailAnggotaActivity.EXTRA_STATUS, anggota.statusAnggota)
+            startActivity(intent)
+        }
         anggotaRV.adapter = anggotaRVAdapter
 
 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Teks judul tab di TabLayout Detail Anggota (app:tabTextAppearance) -->
+    <style name="TeksTabAnggota" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+</resources>

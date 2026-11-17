@@ -64,6 +64,9 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
+            android:name=".anggota.detail.DetailAnggotaActivity"
+            android:exported="false" />
+        <activity
             android:name=".EmailActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
